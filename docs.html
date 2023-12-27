@@ -119,7 +119,7 @@
             <ul class="nav">
               <li class="text-[#111] pl-[20px] font-[400] border-l-[2px]">
         <li class="text-[#111] pl-[20px] font-[400] border-l-[2px]">
-              <a href="#link3">DigitalOcean</a>
+              <a href=".digitalocean.html">DigitalOcean</a>
             </li>
         <li class="text-[#111] pl-[20px] font-[400] border-l-[2px]">
               <a href="#link4">Linode</a>
@@ -150,142 +150,7 @@
         </div>
       </section>
       <!-- Link1 end -->
-
-      <!-- Link3 Start -->
-      <section id="link3">
-        <div class="h-full mt-5">
-          <p class="font-normal text-2xl">Install Windows on DigitalOcean</p>
-          <p class="text-sm pb-4">updated on 07-10-2023</p>
-        </div>
-        <section id="link3" class="border-l-[2px]">
-<div class="h-full mt-5">
-          <p class="font-normal text-2xl">Introduction</p>
-        </div>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows Installation Guide</title>
-</head>
-
-<body>
-
-    <h2 id="h-intro">Intro</h2>
-    <ul>
-        <li>Unlimited windows gz</li>
-        <li>Using windows image as OS</li>
-        <li>Using recovery mode</li>
-    </ul>
-
-    <h2>Install Windows on Digital Ocean 2022</h2>
-    <p>Today we are going to discuss how to install Windows on <a href="https://m.do.co/c/0628b404da1c" target="_blank" rel="noreferrer noopener">Digital Ocean</a>.</p>
-
-    <h3>Using Custom Image</h3>
-    <p>Using Custom image for windows installation</p>
-    <ol>
-        <li>Go to <strong>Manage</strong> - <strong>Image</strong> - <strong>Custom image</strong> - Import via URL
-            <img class="wp-image-179" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do1.png" alt="">
-        </li>
-        <li>Choose any <a href="https://meocloud.my.id/?p=6" target="_blank" rel="noreferrer noopener">Windows GZ</a> file for your Droplet OS with Import via URL (takes about 1 hour).</li>
-        <li>After the Windows OS is successfully uploaded, go to Droplets - Create - Droplets
-            <img class="wp-image-180" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do2.png" alt="">
-        </li>
-        <li>Choose any <strong>Region</strong> you like</li>
-        <li>On Choose <strong>an image</strong> choose <strong>custom image</strong>, and choose the <strong>windows OS</strong> that you just uploaded
-            <img class="wp-image-181" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do3.png" alt="">
-        </li>
-        <li>Choose <strong>Droplets</strong> type that you want and create</li>
-        <li>Open it with <strong>MSTSC</strong> or any Application for RDP. </li>
-    </ol>
-    <ul>
-        <li><strong>Advantages:</strong> save time on next Windows installation, no need to install every time you make a new droplet</li>
-        <li><strong>Disadvantages:</strong> Takes 1 hour or more to upload new Images</li>
-    </ul>
-
-    <h3>Using Recovery Mode</h3>
-    <p>Next method is using recovery mode to install Windows on Digital Ocean. <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color"><strong>This method not working on all VM Type, mostly work on AMD KVM Machine</strong></mark>. Choose Premium AMD Machine. So, this is the alternative way, and I am personally not recommended this method</p>
-    <ol>
-        <li>Go to <strong>Droplets</strong> - <strong>Create</strong> - <strong>Droplets</strong>
-            <img class="wp-image-180" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do2.png" alt="">
-        </li>
-        <li>Choose any <strong>Region</strong> you want, and on <strong>Choose Image</strong> just choose any linux image and choose any <strong>Droplets Size</strong> and type that you want
-            <img class="wp-image-182" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do4.png" alt="">
-        </li>
-        <li><strong>Turn off</strong> the Droplets that you just created and go to <strong>Recovery</strong>, and pick <strong>Boot from Recovery ISO</strong>, and <strong>turn it on</strong>
-            <img class="wp-image-183" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do5.png" alt="">
-        </li>
-        <li>Go to <strong>Recovery Console</strong>
-            <img class="wp-image-184" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do6.png" alt="">
-        </li>
-        <li>On Recovery Console. Choose <strong>1</strong> to mount the drive and write the root password
-            <img class="wp-image-185" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do7.png" alt="">
-        </li>
-        <li>Open <strong>Putty</strong> and login to your droplets with root and password that you just write it down. <kbd>sudo su -</kbd> and <kbd>choose 1</kbd> (<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">mount disk image</mark>) and <kbd>choose 5</kbd> (<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">Attempt to "chroot" into installation system</mark>). And paste this script:
-                <code>wget --no-check-certificate -O- "Windows URL" | gzip | dd of=/dev/vda</code>
-                or
-                <code>wget -O- "Windows URL" | gunzip | dd of=/dev/vda</code>
-                And wait until it fully downloaded. Usually takes 5-15 minutes until fully download
-                <img class="wp-image-186" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do8.png" alt="">
-        </li>
-        <li>After the image fully downloaded. Go to your Digital Ocean Droplets and set <strong>Boot from Hard Drive</strong> - <strong>turn it off</strong> - <strong>turn it on</strong></li>
-        <li>Use <strong>MSTSC</strong> to open your RDP </li>
-    </ol>
-    <ul>
-        <li>Advantages: No need 1 hour or more to create your RDP</li>
-        <li>Disadvantages:
-            <ul>
-                <li>You need to do this method every time you create new Windows RDP on your droplets</li>
-                <li>Not working on all type VM, mostly working on AMD type VM</li>
-            </ul>
-        </li>
-    </ul>
-
-    <h3>Using Direct Installation [Update 22.06.2023]</h3>
-    <p>The third method is direct installation. (Estimated time = 30 minutes to an hour)</p>
-    <ol>
-        <li>Go to your <strong>droplets Access</strong> - <strong>Launch Droplets Console</strong>
-            <img class="wp-image-887" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do1-1.png" alt="">
-        </li>
-        <li><strong>Paste this script</strong> on your Droplets Console
-            <code>wget -qO MeoNet.sh 'https://meocloud.my.id/MeoNet.sh' && bash MeoNet.sh -dd 'Windows URL'</code>
-            <img class="wp-image-888" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do2-1.png" alt="">
-        </li>
-        <li>If you see these screen, that means the <strong>first step is completed</strong>
-            <img class="wp-image-889" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do3-1.png" alt="">
-        </li>
-        <li><strong>Launch Recovery Console</strong> to monitoring the windows installation process
-            <img class="wp-image-890" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do4-1.png" alt="">
-            <img class="wp-image-891" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do5-1.png" alt="">
-        </li>
-        <li><strong>Wait for about 15 to 30 minutes</strong>, and try to open Recovery Console to see if the windows Installation is completed
-            <img class="wp-image-892" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do6-1.png" alt="">
-        </li>
-        <li><strong>Change the IP Address </strong>manually from recovery console [for the complete process, you can watch the video]
-            <img class="wp-image-893" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do7-1.png" alt="">
-        </li>
-        <li><strong>Finally</strong> open your RDP with MSTSC, or others Remote Desktop applications</li>
-    </ol>
-
-    <h2>Conclusion:</h2>
-    <p>Every method has Advantages and Disadvantages, just choose what is suitable for you. <br>Choose Windows GZ file <a href="https://meocloud.my.id/?p=6" target="_blank" rel="noreferrer noopener">here</a></p>
-
-    <blockquote>
-        <p><strong>Note</strong></p>
-        <cite>This Windows Installation use subscription. And we are not giving it for free. <strong>5$/yearly</strong>. <mark>You can make payment. Through Paypal, Cryptocoins, Dana, Ovo, Bank Transfer</mark><br><br>
-            1. These images are made for learning purposes only, if you need to use them for a long time, please use a genuine Windows key to activate the system.<br>
-            2. All images are made by the original MSDN, I can guarantee that there is no private goods, if you do not believe me, please do not use.<br>
-            3. After Windows installation success on the server, you need to manually expand the disk.<br>
-            4. Using Windows images may violate the TOS of some merchants, and I am not responsible for being punished by merchants for using images created by <a href="https://meocloud.my.id/" target="_blank" rel="noreferrer noopener">me</a>.
-        </cite>
-    </blockquote>
-
-</body>
-
-</html>
-
-
+      
         </section>
         <section id="link2_2" class="border-l-[2px]">
           <div class="h-full mt-5 ml-5">
