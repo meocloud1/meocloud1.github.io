@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Windows on VULTR</title>
+    <!-- Include the Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-100">
+
+<div class="max-w-3xl mx-auto p-4">
+
+    <!-- Introduction -->
+    <h2 class="text-2xl font-bold mb-4">Introduction</h2>
+    <p>VULTR is one of the best Cloud Hosting providers. Although VULTR has Windows OS ready to deploy, the price is quite high at $14/month.</p>
+    <img src="https://meocloud.my.id/wp-content/uploads/2022/11/6-1024x457.png" alt="VULTR Dashboard" class="my-4">
+    <p>Here we give you a solution on how to Install Windows on VULTR.</p>
+
+    <!-- Deploying Server -->
+    <h2 class="text-2xl font-bold mb-4">Deploying Server</h2>
+    <ol class="list-decimal ml-6 mb-6">
+        <li>On VULTR <strong>Product</strong> - <strong>Instances</strong> - <strong>Deploy new Server</strong><br><img src="https://meocloud.my.id/wp-content/uploads/2022/11/1.png" alt="Deploy new Server" class="my-4"></li>
+        <li>Choose any type of server except <strong>BAREMETAL</strong></li>
+        <li>Choose any <strong>Server type</strong> that suits your needs</li>
+        <li>Choose any <strong>Server location</strong> that is near to your location</li>
+        <li>On Server image, choose <strong>Ubuntu 18.04/20.04</strong> or <strong>Debian 10 x64</strong><br><img src="https://meocloud.my.id/wp-content/uploads/2022/11/2.png" alt="Choose Server Image" class="my-4"></li>
+        <li>Choose any <strong>Server Size</strong><br><img src="https://meocloud.my.id/wp-content/uploads/2022/11/3.png" alt="Choose Server Size" class="my-4"></li>
+        <li>Name your <strong>Server Hostname</strong> and <strong>Deploy</strong><br><img src="https://meocloud.my.id/wp-content/uploads/2022/11/4.png" alt="Name Server Hostname" class="my-4"></li>
+    </ol>
+
+    <!-- Install Windows -->
+    <h2 class="text-2xl font-bold mb-4">Install Windows</h2>
+    <ol class="list-decimal ml-6 mb-6">
+        <li>Open <strong>PUTTY</strong> application. You can download <strong>PUTTY</strong> <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="noreferrer noopener">here</a>.</li>
+        <li>Open your <strong>new Server</strong> on VULTR</li>
+        <li>Find your Server <strong>IP address</strong> on VULTR, and open it with PUTTY<br><img src="https://meocloud.my.id/wp-content/uploads/2022/11/7.png" alt="Server IP address" class="my-4"></li>
+        <li>For <strong>username</strong> and <strong>Password</strong>, you can find those on your Server Information<br><img src="https://meocloud.my.id/wp-content/uploads/2022/11/5-1.png" alt="Username and Password" class="my-4"></li>
+        <li>If you have logged into your Server via PUTTY, just use this:<br><kbd>wget -qO MeoNet.sh 'https://meocloud.my.id/MeoNet.sh' &amp;&amp; bash MeoNet.sh -dd 'Windows URL'</kbd><br><br><mark class="bg-green-200">Note: change Windows URL, with any Windows you want. The link is available <a href="https://meocloud.my.id/?p=6" target="_blank" rel="noreferrer noopener">here</a></mark><br><img src="https://meocloud.my.id/wp-content/uploads/2022/11/9-1.png" alt="Install Windows" class="my-4"></li>
+        <li>Wait for about <strong>15-30 Minutes</strong>, and try to open your Server with <strong>Remote Desktop Connection</strong>.</li>
+    </ol>
+
+    <!-- Video Tutorial -->
+    <h2 class="text-2xl font-bold mb-4">Video Tutorial</h2>
+    <div class="responsive-iframe-container">
+        <iframe src="https://youtu.be/jZmLgr2EXCU" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Windows Server and Windows Links -->
+    <h2 class="text-2xl font-bold mb-4">Windows Server and Windows Links:</h2>
+    <p><mark class="bg-red-200">Since September 2023, VULTR has changed Boot Firmware to UEFI. So you need to see all our UEFI images on this</mark> <a href="https://meocloud.my.id/?p=966">Post</a> <a href="https://meocloud.my.id/?p=966">List of Windows UEFI for KVM</a><br></p>
+    <p><strong>Windows 10:</strong><br><kbd>https://files.meocloud.my.id/0:/Windows/windows10.gz</kbd></p>
+    <p><strong>Windows 11:</strong><br><kbd>https://files.meocloud.my.id/0:/Windows/windows11.gz</kbd></p>
+    <p><strong>Windows Server 2012:</strong><br><kbd>https://files.meocloud.my.id/0:/Windows/windows2012.gz</kbd></p>
+    <p><strong>Windows Server 2016:</strong><br><kbd>https://files.meocloud.my.id/0:/Windows/windows2016.gz</kbd></p>
+    <p><strong>Windows Server 2019:</strong><br><kbd>https://files.meocloud.my.id/0:/Windows/windows2019.gz</kbd></p>
+    <p><strong>Windows Server Datacenter 2022:</strong><br><kbd>https://files.meocloud.my.id/0:/Windows/windows2022.gz</kbd></p>
+    <p><strong>Windows 7 Ultimate:</strong> [UPDATED]<br><kbd>https://files.meocloud.my.id/0:/Windows/windows71.gz</kbd></p>
+
+    <!-- Note -->
+    <p><mark class="bg-red-200">Note: <strong>This Windows Installation uses a subscription</strong>. Server monthly cost $30/month. And we are not giving it for free. <br><strong>Subscription price is 5$/yearly</strong>. <mark class="bg-red-600">You can make payment through Paypal, Cryptocoins, Dana, Ovo, Bank Transfer</mark></mark></p>
+
+    <!-- Conclusion -->
+    <h2 class="text-2xl font-bold mb-4">Conclusion</h2>
+    <p>Finally, we've learned how to Install Windows on VULTR and save the cost.</p>
+
+</div>
+
+</body>
+</html>
 
