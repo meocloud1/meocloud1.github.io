@@ -1,11 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Install Windows on Linode</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Change the description wrt project -->
+  <meta name="meocloud" content="what have I done" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="./public/styles/style.css">
+
+  <!-- You can add your own fonts from fonts.google.com -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+
+  <!-- Default Script tags -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./public/js/index.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+    };
+  </script>
+
+  <!-- Replace the title name -->
+  <title>Install Windows on VULTR</title>
+
+  <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/favicon/favicon.ico">
 </head>
-<body>
+
+<body style="font-family: 'Poppins', sans-serif; min-height: 100vh; display: flex; flex-direction: column;"
+  class="dark:bg-slate-900 bg-white dark:text-white">
+  <!-- Header start here -->
+  <header class="w-full p-3 border-b dark:border-b  flex sticky top-0 z-10 dark:bg-slate-900 bg-white dark:text-white ">
+    <nav
+      class="w-full flex flex-col lg:flex-row md:flex-row sm:flex-row items-start lg:item-center md:item-center sm:item-center lg:justify-between md:justify-between sm:justify-between justify-start dark:text-white">
+      <ul>
+        <!-- You can change your logo name -->
+        <li class="font-mono text-xl">
+          <a href="./index.html">
+          meocloud
+        </a>
+        </li>
+      </ul>
+      <ul id="header-nav" class="mr-6 sm:flex md:flex lg:flex hidden">
+        <li class="mr-5 mb-3 mt-5 sm:mb-0 sm:mt-0 md:mb-0 md:mt-0 lg:mb-0 lg:mt-0">
+          <a href="./docs.html">Documentation</a>
+        </li>
+        <li class="mr-5 mb-3 mt-5 sm:mb-0 sm:mt-0 md:mb-0 md:mt-0 lg:mb-0 lg:mt-0">
+          <a href="#contributors">Meet my Contributor</a>
+        </li>
+        <div>
+          <ul class="flex">
+            <!-- Change the href link to your respective social media accounts-->
+            <li class="mr-5 flex dark:hidden">
+              <p onclick="darkmode()">
+                <img src="./public/svgs/sun.svg" alt="sun Link" />
+              </p>
+            </li>
+            <li class="mr-5 hidden dark:flex">
+              <p onclick="lightmode()">
+                <img src="./public/svgs/sun-dark.svg" alt="sun Link" />
+              </p>
+            </li>
+            <li class="mr-5 flex dark:hidden">
+              <a href="https://wa.me/6285883339867"><img src="./public/svgs/whatsapp1.png" alt="whatsapp" /></a>
+            </li>
+            <li class="mr-5 hidden dark:flex">
+              <a href="https://wa.me/6285883339867"><img src="./public/svgs/whatsapp-dark.png" alt="whatsapp" /></a>
+            </li>
+            <li class="mr-5 flex dark:hidden">
+              <a href="https://web.facebook.com/meocloud"><img src="./public/svgs/facebook1.png" alt="facebook" /></a>
+            </li>
+            <li class="mr-5 hidden dark:flex">
+              <a href="https://web.facebook.com/meocloud"><img src="./public/svgs/facebook-dark.png" alt="facebook" /></a>
+            </li>
+            <li class="flex dark:hidden">
+              <a href="https://t.me/meocloud"><img src="./public/svgs/telegram1.png" alt="Telegram" /></a>
+            </li>
+            <li class="hidden dark:flex">
+              <a href="https://t.me/meocloud"><img src="./public/svgs/telegram-dark.png" alt="Telegram" /></a>
+            </li>
+          </ul>
+        </div>
+      </ul>
+    </nav>
+
+    <div class="sm:hidden flex" onclick="OnclickOpenMenu()" id="open-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    <div class="hidden" onclick="OnclickCloseMenu()" id="close-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+  </header>
+  <!-- Header ends here -->
+
+  <div class="flex flex-col md:flex-row lg:flex-row">
+    <!-- Side menu starts here -->
+    <nav
+      class="flex ml-10 mt-7 md:fixed lg:fixed"
+      data-spy="affix"
+      data-offset-top="300"
+      data-offset-bottom="200"
+      role="navigation"
+    >
+      <ul class="nav">
+        <hr style="height:10px; visibility:hidden;" />
+        <li class="font-mono"><a href="#link1">Intro</a></li>
+        <hr style="height:10px; visibility:hidden;" />
+        <li class="font-mono">
+          <a href="#link2">Deploying server</a>
+        </li>
+        <hr style="height:10px; visibility:hidden;" />
+        <li class="font-mono"><a href="#link3">Install windows</a></li>
+        <hr style="height:10px; visibility:hidden;" />
+        <li class="font-mono"><a href="#link4">Video tutorial</a></li>
+        <hr style="height:10px; visibility:hidden;" />
+        <li class="font-mono"><a href="#link6">Windows Link</a></li>
+        <hr style="height:10px; visibility:hidden;" />
+        <li class="font-mono"><a href="#link5">Pricing</a></li>
+        <hr style="height:10px; visibility:hidden;" />
+        <li class="font-mono"><a href="docs.html">Documentation</a></li>
+      </ul>
+    </nav>
+    <!-- Side Menu ends here -->
+
 
 <!-- Introduction -->
 <h2 id="h-introduction">Introduction</h2>
@@ -76,14 +206,155 @@
     <cite>A. Since Linode become Akamai, you can solve this by rebuilding the VM or Manually insert the IP Address on RDP Windows Network Setting</cite>
 </blockquote>
 
-<!-- Conclusion -->
-<h2>Conclusion</h2>
-<p>Finally, we have updated the method on How to Install Windows on Linode. If you still have difficulty following this method, you are free to contact us.</p>
-<blockquote>
-    <p><strong>Note:</strong></p>
-    <cite>This Windows Installation uses a subscription. And we are not giving it for free. <strong>5$/yearly</strong>. <mark>You can make payment through Paypal, Cryptocoins, Dana, Ovo, Bank Transfer</mark><br><br>1. These images are made for learning purposes only, if you need to use them for a long time, please use a genuine Windows key to activate the system.<br>2. All images are made by the original MSDN, I can guarantee that there is no private goods, if you do not believe me, please do not use.<br>3. After Windows installation success on the server, you need to manually expand the disk.<br>4. Using Windows images may violate the TOS of some merchants, and I am not responsible for being punished by merchants for using images created by <a href="https://meocloud.my.id/" target="_blank" rel="noreferrer noopener">me</a>.</cite>
-</blockquote>
+    <!-- Note -->
+  <div class="pl-5 md:pl-[250px] lg:pl-[250px]">
+      <!-- Link5 start -->
+      <section id="link5">
+        <div class="h-full mt-10">
+          <p class="font-normal text-2xl">#Pricing</p><br>
+            <section>
+<!-- Quote -->
+    <blockquote class="border-l-4 border-gray-500 pl-4 mb-4">
+        <!-- Quote Paragraph -->
+        <p class="mb-2"><strong>Note</strong></p>
+        <!-- Quote Citation -->
+        <cite class="text-sm">This Windows Installation use subscription. And we are not giving it for free. <strong>5$/yearly</strong>. <mark>You can make payment. Through Paypal, Cryptocoins, Dana, Ovo, Bank Transfer</mark><br><br>
+            1. These images are made for learning purposes only, if you need to use them for a long time, please use a genuine Windows key to activate the system.<br>
+            2. All images are made by the original MSDN, I can guarantee that there is no private goods, if you do not believe me, please do not use.<br>
+            3. After Windows installation success on the server, you need to manually expand the disk.<br>
+            4. Using Windows images may violate the TOS of some merchants, and I am not responsible for being punished by merchants for using images created by <a href="https://meocloud.my.id/" target="_blank" rel="noreferrer noopener">me</a>.
+        </cite>
+    </blockquote>
+              </div>
+            </div>
+          </section>
+    </div>
+    
 
-</body>
-</html>
+    <!-- Conclusion -->
+  <div class="pl-5 md:pl-[250px] lg:pl-[250px]">
+      <!-- LinkConclusion start -->
+      <section id="Conclusion">
+        <div class="h-full mt-10">
+          <p class="font-normal text-2xl">#Conclusion</p><br>
+            <section>
+              <p class="font-bold text-3x1">Finally, we've learned how to Install Windows on VULTR and save the cost.</p>
+              </div>
+            </div>
+          </section>
+    </div>
 
+</div>
+
+
+  <!-- Contribution section starts here -->
+  <!-- This is optional as per your wish -->
+  <!-- You can also change the design -->
+    <!-- Replace background image as per your choice -->
+    <div class="pl-5 md:pl-[250px] lg:pl-[250px]">
+      <section id="contributors">
+    <div class="container mx-auto m-5 bg-gradient-to-r from-[#009FFF] to-[#ec2F4B] rounded-md">
+      <div class="flex flex-col justify-center items-center py-12 mx-4 md:mx-6">
+        <div class="lg:w-1/2 flex flex-col justify-center items-center mb-10">
+          <h1 class="text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-white">
+            Meet my Contributor
+          </h1>
+        </div>
+        <div role="list" aria-label="Team members" class="grid grid-flow-row md:grid-flow-col gap-10">
+          <!-- Replace href and src link -->
+          <div role="listitem" class="relative flex justify-center items-center">
+            <a href="https://github.com/nikenAI" target="_blank">
+              <div class="relative h-40 bg-white hover:drop-shadow-2xl w-48 flex justify-center rounded-md">
+                <img src="./public/svgs/github.svg" class="absolute top-16 h-6 w-6" alt="github.img" />
+                <!-- add github username under title -->
+                <img src="https://files.meocloud.my.id/13:/AI/411960961_770624064898105_6535883631161369538_n.jpg"
+                  class="absolute w-20 h-20 -top-8 rounded-full" alt="display avatar" role="img" title="nikenAI" />
+                <!-- Enter your github username -->
+                <p class="absolute top-24 text-center text-black">@nikenAI</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Annisa -->
+          <div role="listitem" class="relative flex justify-center items-center">
+            <a href="https://github.com/annisaAI" target="_blank">
+              <div class="relative h-40 bg-white hover:drop-shadow-2xl w-48 flex justify-center rounded-md">
+                <img src="./public/svgs/github.svg" class="absolute top-16 h-6 w-6" alt="github.img" />
+                <!-- add github username under title -->
+                <img src="https://files.meocloud.my.id/13:/AI/413036187_122146160126024364_1676006281468376756_n.jpg"
+                  class="absolute w-20 h-20 -top-8 rounded-full" alt="display avatar" role="img" title="anissaAI" />
+                <!-- Enter your github username -->
+                <p class="absolute top-24 text-center text-black">@anissaAI</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Kim Contribution -->
+          <div role="list" aria-label="Team members" class="grid grid-flow-row md:grid-flow-col gap-10">
+            <!-- Replace href and src link -->
+            <div role="listitem" class="relative flex justify-center items-center">
+              <a href="https://github.com/kimAI" target="_blank">
+                <div class="relative h-40 bg-white hover:drop-shadow-2xl w-48 flex justify-center rounded-md">
+                  <img src="./public/svgs/github.svg" class="absolute top-16 h-6 w-6" alt="github.img" />
+                  <!-- add github username under title -->
+                  <img src="https://files.meocloud.my.id/13:/AI/413982863_2080727608943513_3475025641474995321_n.jpg"
+                    class="absolute w-20 h-20 -top-8 rounded-full" alt="display avatar" role="img" title="KimAI" />
+                  <!-- Enter your github username -->
+                  <p class="absolute top-24 text-center text-black">@kimAI</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Elf Contribution -->
+          <div role="list" aria-label="Team members" class="grid grid-flow-row md:grid-flow-col gap-10">
+            <!-- Replace href and src link -->
+            <div role="listitem" class="relative flex justify-center items-center">
+              <a href="https://github.com/elfAI" target="_blank">
+                <div class="relative h-40 bg-white hover:drop-shadow-2xl w-48 flex justify-center rounded-md">
+                  <img src="./public/svgs/github.svg" class="absolute top-16 h-6 w-6" alt="github.img" />
+                  <!-- add github username under title -->
+                  <img src="https://files.meocloud.my.id/13:/AI/414205332_1700730410701762_7539896649423320323_n.jpg"
+                    class="absolute w-20 h-20 -top-8 rounded-full" alt="display avatar" role="img" title="elfAI" />
+                  <!-- Enter your github username -->
+                  <p class="absolute top-24 text-center text-black">@ElfAI</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+  </section>
+  <!-- Contribution section ends here -->
+
+  <!-- Footer starts here -->
+  <footer style="margin-top: auto;">
+    <div class="bg-white dark:bg-slate-500 h-38 py-1 px-1 mt-5">
+      <div tabindex="0" aria-label="footer"
+        class="focus:outline-none mx-auto container flex flex-col items-center justify-right">
+        <div class="text-black flex flex-col md:items-center f-f-l pt-0">
+          <div class="my-6 text-base text-color f-f-l">
+            <ul class="md:flex items-center">
+              <li class="md:mr-6 cursor-pointer pt-4 lg:py-0">
+                <a href="./docs.html"
+                  class="text-black dark:text-white focus:outline-none focus:underline hover:text-gray-200">Documentation
+                </a>
+              </li>
+              <li class="cursor-pointer pt-4 lg:py-0">
+                <a href="#contributors"
+                  class="text-black dark:text-white focus:outline-none focus:underline hover:text-gray-200">Contribution
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="text-sm text-color mb-10 f-f-l">
+            <!-- Rename larasky with your respective name -->
+            <p tabindex="0" class="text-black dark:text-white focus:outline-none">
+              &copy; 2024 LaraSky. All rights reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
