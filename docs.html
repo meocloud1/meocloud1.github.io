@@ -272,6 +272,16 @@ Installing windows on KVM sometimes agaist the T.O.S of some Provider, here we w
         </script>
               <p class="text-sm pb-4">copy and paste into console</p>
               <script src="https://gist.github.com/meocloud1/c9f9d69b25c7f1ba01baa7655d60f276.js"></script>
+
+              <span class="text-gray-400">Code:</span>
+              <button class="code bg-gray-800 hover:bg-gray-700 text-gray-300 px-3 py-1 rounded-md"
+                data-clipboard-target="#code">
+                Copy
+              </button>
+            </div>
+            <div class="overflow-x-auto">
+              <pre id="code" class="text-gray-800 dark:text-gray-200">
+              <code>wget --no-check-certificate -O- "Windows URL" | gunzip | dd of=/dev/vda</code>
             </div>
           </section>
         </section>
