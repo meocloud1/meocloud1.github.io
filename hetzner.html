@@ -1,1 +1,52 @@
+<img src="https://meocloud.my.id/wp-content/uploads/2023/03/hetznercloud-1024x576.jpg" alt="Image" class="is-style-rounded">
 
+## Introduction
+
+<h2 id="h-introduction" class="wp-block-heading">Introduction</h2>
+
+<p>Hetzner is an affordable price Cloud Service.</p>
+
+<p>There is another method using ISO attached, but sometimes, it is taking time to install. Today, we are going to learn <a href="https://meocloud.my.id/?p=746" target="_blank" rel="noreferrer noopener">How to Install Windows on Hetzner</a>.</p>
+
+<p><strong>Note:</strong> This is only for Standard Server, not Dedicated.</p>
+
+<h3 class="wp-block-heading">Learning Inventory</h3>
+
+<p>In this Learning process, you need:</p>
+
+<ul>
+  <li><a href="https://www.hetzner.com/" target="_blank" rel="noreferrer noopener">Hetzner</a> Account</li>
+  <li>SSH Maker (<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="noreferrer noopener">PuttyGen</a>)</li>
+  <li><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="noreferrer noopener">Putty</a></li>
+  <li>Windows image link [<a href="https://meocloud.my.id/?p=6" target="_blank" rel="noreferrer noopener">See our links here</a>]</li>
+  <li>Remote Desktop Application</li>
+  <li>Passion</li>
+</ul>
+
+<h2 class="wp-block-heading">Create Instance</h2>
+
+<ol>
+  <li><strong>Add Server</strong><br><img class="wp-image-747" style="width: 500px;" src="https://meocloud.my.id/wp-content/uploads/2023/03/001.png" alt=""><br><br><br></li>
+  <li><strong>Create a Server</strong><br><img class="wp-image-749" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2023/03/002.png" alt=""><br>a. <strong>Location</strong>: Any location you like<br>b. <strong>Image</strong>: Ubuntu or Debian<br>c. <strong>Type</strong>: Any Standard Server<br>d. <strong>SSH</strong>: you need to create new SSH key if you do not have any with PUTTYGEN<br>e. <strong>Name</strong>: Name your Server<br><br></li>
+  <li><strong>Create and Buy</strong><br><img class="wp-image-750" style="width: 300px;" src="https://meocloud.my.id/wp-content/uploads/2023/03/003.png" alt=""><br></li>
+</ol>
+
+<h2 class="wp-block-heading">Installing Windows</h2>
+
+<ol>
+  <li>After basic OS has been properly installed on your VM, go to <strong>Rescue</strong> and <strong>Enable Rescue and Power Cycle</strong>. And VM will auto reboot into Rescue mode<br><br><img class="wp-image-751" style="width: 500px;" src="https://meocloud.my.id/wp-content/uploads/2023/03/004.png" alt=""><br></li>
+  <li>Login into your rescue VM through <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="noreferrer noopener">Putty</a> with Rescue Credentials or SSH<br><br><img class="wp-image-755" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2023/03/005.png" alt=""><br><br></li>
+  <li>Just paste this Windows installation Script<br><kbd>wget -O- "Windows URL" | gunzip | dd of=/dev/sda</kbd><br><br><img class="wp-image-756" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2023/03/006.png" alt=""><br></li>
+  <li>Wait until the download process completed.<br><br><img class="wp-image-757" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2023/03/007.png" alt=""><br></li>
+  <li>Reboot by Power off and Power on your VM, to change reboot mode into normal<br><br><img class="wp-image-758" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2023/03/008.png" alt=""><br></li>
+  <li>Open your VM with RDP<br><br><img class="wp-image-759" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2023/03/009.png" alt=""><br><br></li>
+</ol>
+
+<h2 class="wp-block-heading">Conclusion</h2>
+
+<p>Finally, we have learned a new method on How to Install Windows on Hetzner.</p>
+
+<blockquote class="wp-block-quote">
+  <p><strong>Note:</strong></p>
+  <cite>This Windows Installation use subscription. And we are not giving it for free. <strong>5$/yearly</strong>. <mark>You can make payment through Paypal, Cryptocoins, Dana, Ovo, Bank Transfer</mark><br><br>1. These images are made for learning purposes only, if you need to use them for a long time, please use a genuine Windows key to activate the system.<br>2. All images are made by the original MSDN, I can guarantee that there is no private goods, if you do not believe me, please do not use.<br>3. After Windows installation success on the server, you need to manually expand the disk.<br>4. Using Windows images may violate the TOS of some merchants, and I am not responsible for being punished by merchants for using images created by <a href="https://meocloud.my.id/" target="_blank" rel="noreferrer noopener">me</a>.</cite>
+</blockquote>
