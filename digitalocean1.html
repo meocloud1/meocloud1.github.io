@@ -194,7 +194,7 @@
 <br>
   <ul>
 
-              <p class="font-normal text-xl">#Summary</p>
+              <p class="font-normal text-xl">#Custom Image Summary</p>
               <div class="pt-5 pb-4 flex flex-cols">
                 <div
                   class="max-w-sm rounded shadow bg-white bg-gradient-to-br from-[#302b63] to-[#2c3e50] block -inset-1 -skew-y-3 relative inline-block before:block before:absolute before:-inset-1 before:bg-[#F27121] before:h-2 before:rounded"
@@ -261,6 +261,87 @@
           <!-- Cards ends -->
        </section>
   </ul><br>
+
+    <title>Windows Installation Guide</title>
+    <!-- Include the Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-100">
+
+<div class="max-w-3xl mx-auto p-4">
+
+    <!-- Paragraph -->
+    <p class="mb-4">Next method is using recovery mode to install Windows on Digital Ocean. <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color"><strong>This method not working on all VM Type, mostly work on AMD KVM Machine</strong></mark>. Choose Premium AMD Machine. So, this is the alternative way, and I am personally not recommended this method</p>
+
+    <!-- Ordered List -->
+    <ol class="list-decimal pl-6 mb-4">
+        <li class="mb-2">Go to <strong>Droplets</strong> - <strong>Create</strong> - <strong>Droplets</strong><br><img class="wp-image-180" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do2.png" alt=""></li>
+        <li class="mb-2">Choose any <strong>Region</strong> you want, and on <strong>Choose Image</strong> just choose any linux image and choose any <strong>Droplets Size</strong> and type that you want<br><img class="wp-image-182" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do4.png" alt=""></li>
+        <li class="mb-2"><strong>Turn off</strong> the Droplets that you just created and go to <strong>Recovery</strong>, and pick <strong>Boot from Recovery ISO</strong>, and <strong>turn it on</strong><br><img class="wp-image-183" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do5.png" alt=""></li>
+        <li class="mb-2">Go to <strong>Recovery Console</strong><br><img class="wp-image-184" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do6.png" alt=""></li>
+        <li class="mb-2">On Recovery Console. Choose <strong>1</strong> to mount the drive and write the root password<br><img class="wp-image-185" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do7.png" alt=""></li>
+        <li class="mb-2">Open <strong>Putty</strong> and login to your droplets with root and password that you just write it down. <br><kbd>sudo su -</kbd> and <kbd>choose 1</kbd> (<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">mount disk image</mark>) and <kbd>choose 5</kbd> (<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">Attempt to "chroot" into installation system</mark>). And paste this script: <br><code>wget --no-check-certificate -O- "Windows URL" | gzip | dd of=/dev/vda</code><br><br>or<br><br><code>wget -O- "Windows URL" | gunzip | dd of=/dev/vda</code><br><br>And wait until it fully downloaded. Usually takes 5-15 minutes until fully download<br><img class="wp-image-186" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do8.png" alt=""></li>
+        <li class="mb-2">After the image fully downloaded. Go to your Digital Ocean Droplets and set <strong>Boot from Hard Drive</strong> - <strong>turn it off</strong> - <strong>turn it on</strong></li>
+        <li>Use <strong>MSTSC</strong> to open your RDP </li>
+    </ol>
+
+    <!-- Unordered List -->
+    <ul class="list-disc pl-6 mb-4">
+        <li>Advantages: No need 1 hour or more to create your RDP</li>
+        <li>Disadvantages:
+            <!-- Nested Unordered List -->
+            <ul class="list-disc pl-6">
+                <li>You need to do this method every time you create new Windows RDP on your droplets</li>
+                <li>Not working on all type VM, mostly working on AMD type VM</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Heading -->
+    <h3 class="text-xl font-bold mb-4">Using Direct Installation [Update 22.06.2023]</h3>
+
+    <!-- YouTube Video Embed -->
+    <div class="aspect-w-16 aspect-h-9 mb-4">
+        <iframe src="https://www.youtube.com/embed/NlYATPO7Gj0" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
+    </div>
+
+    <!-- Paragraph -->
+    <p class="mb-4">Ok the third method is direct installation. (Estimated time = 30 minutes to an hour)</p>
+
+    <!-- Ordered List -->
+    <ol class="list-decimal pl-6 mb-4">
+        <li class="mb-2">Go to your <strong>droplets Access</strong> - <strong>Launch Droplets Console</strong><br><br><img class="wp-image-887" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do1-1.png" alt=""><br></li>
+        <li class="mb-2"><strong>Paste this script</strong> on your Droplets Console<br><br><code>wget -qO MeoNet.sh 'https://meocloud.my.id/MeoNet.sh' &amp;&amp; bash MeoNet.sh -dd 'Windows URL'</code><br><br><img class="wp-image-888" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do2-1.png" alt=""><br></li>
+        <li class="mb-2">If you see these screen, that means the <strong>first step is completed</strong><br><br><img class="wp-image-889" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do3-1.png" alt=""><br></li>
+        <li class="mb-2"><strong>Launch Recovery Console</strong> to monitoring the windows installation process<br><br><img class="wp-image-890" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do4-1.png" alt=""><br><br><img class="wp-image-891" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do5-1.png" alt=""><br><br></li>
+        <li class="mb-2"><strong>Wait for about 15 to 30 minutes</strong>, and try to open Recovery Console to see if the windows Installation is completed<br><br><img class="wp-image-892" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do6-1.png" alt=""><br><br></li>
+        <li class="mb-2"><strong>Change the IP Address </strong>manually from recovery console [for the complete process, you can watch the video]<br><br><img class="wp-image-893" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do7-1.png" alt=""><br><br></li>
+        <li><strong>Finally</strong> open your RDP with MSTSC, or others Remote Desktop applications<br><br><br></li>
+    </ol>
+
+    <!-- Heading -->
+    <h2 class="text-xl font-bold mb-4">Conclusion:</h2>
+
+    <!-- Paragraph -->
+    <p class="mb-4">Every method has Advantages and Disadvantages, just choose what is suitable for you. <br>Choose Windows GZ file <a href="https://meocloud.my.id/?p=6" target="_blank" rel="noreferrer noopener">here</a></p>
+
+    <!-- Quote -->
+    <blockquote class="border-l-4 border-gray-500 pl-4 mb-4">
+        <!-- Quote Paragraph -->
+        <p class="mb-2"><strong>Note</strong></p>
+        <!-- Quote Citation -->
+        <cite class="text-sm">This Windows Installation use subscription. And we are not giving it for free. <strong>5$/yearly</strong>. <mark>You can make payment. Through Paypal, Cryptocoins, Dana, Ovo, Bank Transfer</mark><br><br>
+            1. These images are made for learning purposes only, if you need to use them for a long time, please use a genuine Windows key to activate the system.<br>
+            2. All images are made by the original MSDN, I can guarantee that there is no private goods, if you do not believe me, please do not use.<br>
+            3. After Windows installation success on the server, you need to manually expand the disk.<br>
+            4. Using Windows images may violate the TOS of some merchants, and I am not responsible for being punished by merchants for using images created by <a href="https://meocloud.my.id/" target="_blank" rel="noreferrer noopener">me</a>.
+        </cite>
+    </blockquote>
+</div>
+
+</body>
+</html>
+
             <!-- rest of your content -->
           </p>
         </div>
