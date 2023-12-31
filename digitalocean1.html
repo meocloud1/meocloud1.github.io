@@ -447,6 +447,15 @@
             <section>
               <script defer src="https://comments.meocloud.my.id/js/commento.js"></script>
 <div id="commento"></div>
+              <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+    init({
+      el: '#waline',
+      serverURL: 'hhttps://walle-lv0iivtc6-meoclub.vercel.app',
+      lang: 'en',
+    });
+  </script>
               </div>
             </div>
           </section>
