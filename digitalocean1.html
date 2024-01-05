@@ -10,6 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="./larasky/tooltips.min.css">
 
   <!-- stylesheets -->
   <link rel="stylesheet" href="./public/styles/style.css">
@@ -294,7 +295,12 @@
         <br><li class="mb-2"><strong>Turn off</strong> the Droplets that you just created and go to <strong>Recovery</strong>, and pick <strong>Boot from Recovery ISO</strong>, and <strong>turn it on</strong><br><img class="wp-image-183" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do5.png" alt=""></li>
         <br><li class="mb-2">Go to <strong>Recovery Console</strong><br><img class="wp-image-184" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do6.png" alt=""></li>
         <br><li class="mb-2">On Recovery Console. Choose <strong>1</strong> to mount the drive and write the root password<br><img class="wp-image-185" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do7.png" alt=""></li>
-        <br><li class="mb-2">Open <strong>Putty</strong> and login to your droplets with root and password that you just write it down. <br><kbd>sudo su -</kbd> and <kbd>choose 1</kbd> (<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">mount disk image</mark>) and <kbd>choose 5</kbd> (<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">Attempt to "chroot" into installation system</mark>). And paste this script: <br><code>wget --no-check-certificate -O- "Windows URL" | gzip | dd of=/dev/vda</code><br><br>or<br><br><code>wget -O- "Windows URL" | gunzip | dd of=/dev/vda</code><br><br>And wait until it fully downloaded. Usually takes 5-15 minutes until fully download<br><img class="wp-image-186" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do8.png" alt=""></li>
+        <br><li class="mb-2">Open <strong>Putty</strong> and login to your droplets with root and password that you just write it down. <br><kbd>sudo su -</kbd> and <kbd>choose 1</kbd> (<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">mount disk image</mark>) and <kbd>choose 5</kbd> (<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">Attempt to "chroot" into installation system</mark>). And paste this script: 
+          <!-- elemen yang akan dicopy -->
+<label for="" id="targerId">wget --no-check-certificate -O- "Windows URL" | gzip | dd of=/dev/vda</label>
+<!-- tombol untuk melakukan copy -->
+<button onClick="copyContent('targerId')">Copy</button>
+          <br><code>wget --no-check-certificate -O- "Windows URL" | gzip | dd of=/dev/vda</code><br><br>or<br><br><code>wget -O- "Windows URL" | gunzip | dd of=/dev/vda</code><br><br>And wait until it fully downloaded. Usually takes 5-15 minutes until fully download<br><img class="wp-image-186" style="width: 550px;" src="https://meocloud.my.id/wp-content/uploads/2022/11/do8.png" alt=""></li>
         <br><li class="mb-2">After the image fully downloaded. Go to your Digital Ocean Droplets and set <strong>Boot from Hard Drive</strong> - <strong>turn it off</strong> - <strong>turn it on</strong></li>
         <br><li>Use <strong>MSTSC</strong> to open your RDP </li>
     </ol>
