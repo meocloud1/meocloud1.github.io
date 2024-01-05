@@ -298,20 +298,17 @@
         <br><li class="mb-2">Open <strong>Putty</strong> and login to your droplets with root and password that you just write it down. <br><kbd>sudo su -</kbd> and <kbd>choose 1</kbd> (<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">mount disk image</mark>) and <kbd>choose 5</kbd> (<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">Attempt to "chroot" into installation system</mark>). And paste this script: 
           <script src="./larasky/simpleCopy.min.js"></script>
           
-<pre class="shiki" style="background-color: #00cc66">
+<pre class="shiki" style="background-color: #00cc66" height="20">
 	<code>
 			<span class="line">
-				<span style="color: #CF222E">wget --no-check-certificate -O- "Windows URL" | gzip | dd of=/dev/vda</span>
-			</span>
+				<span style="color: #CF222E"><label for="" id="targerId">wget --no-check-certificate -O- "Windows URL" | gzip | dd of=/dev/vda</span>
+			</label></span>
 	</code>
-	<button onClick="copyContent('targerId')">
-				Copy
+	<button onClick="copyContent('targerId')">Copy
 	</button>
 </pre>
 
 		or<br>
-<script src="./larasky/simpleCopy.min.js"></script>
-
 		
 	<pre class="shiki" style="background-color: #ffffff">
 	<code>
